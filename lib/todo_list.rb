@@ -1,21 +1,24 @@
 # File: lib/todo_list.rb
 class TodoList
   def initialize
+    @list = []
   end
 
-  def add(todo) # todo is an instance of Todo
-    # Returns nothing
+  def add(todo) 
+    @list << todo
   end
 
   def incomplete
-    # Returns all non-done todos
+    return @list.select { |item| !item.done? }
   end
 
   def complete
-    # Returns all complete todos
+    return @list.select { |item| item.done? }
   end
 
   def give_up!
-    # Marks all todos as complete
+    @list.each { |item| 
+      item.mark_done!
+    }
   end
 end
