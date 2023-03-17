@@ -1,9 +1,12 @@
 # File: lib/diary.rb
+require 'diary_entry'
+
 class Diary
   def initialize
   end
 
-  def add(entry) # entry is an instance of DiaryEntry
+  def add(entry) 
+    # entry is an instance of DiaryEntry
     # Returns nothing
   end
 
